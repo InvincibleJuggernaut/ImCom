@@ -12,7 +12,7 @@ def resize(file_name)
     no_of_blocks=(dimension*dimension)/(8*8)
     max_limit=(no_of_blocks)**(1/2)
     array=np.asarray(image)
-    return array
+    return array,max_limit
 
 def init_3d_matrix(x,y):
     list_name=[]
@@ -49,7 +49,7 @@ def transform_matrix():
     H=np.asarray(B)
 
 
-array=resize(abc.jpg)
+array,max=resize(abc.jpg)
 
 x=array.shape[0]
 y=array.shape[1]
@@ -70,3 +70,8 @@ green_blocks=create_blocks(green_component)
 blue_blocks=create_blocks(blue_component)
 
 transform_matrix()
+
+compressed_red_empty=init_3d_matrix(max,max)
+compressed_green_empty=init_3d_matrix(max,max)
+compressed_blue_empty=init_3d_matrix(max,max)
+
