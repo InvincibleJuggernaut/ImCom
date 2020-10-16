@@ -50,23 +50,16 @@ def transform_matrix():
 
 def matrix_product(array1, array2):
     product=init_matrix(8,8)
-    if(len(str(array2))==0):
+    array1=list2array(array1)
+    array2=list2array(array2)
+    for k in range(0,8):
         for i in range(0,8):
+            product[k][i]=0
             for j in range(0,8):
-                product[i][j]=array1[i][j]*array2
-        product=list2array(product)
-        return product
-    else:
-        array1=list2array(array1)
-        array2=list2array(array2)
-        for k in range(0,8):
-            for i in range(0,8):
-                product[k][i]=0
-                for j in range(0,8):
-                    product[k][i]=product[k][i]+(array1[k][j]*array2[j][i])
-        product=list2array(product)
-        return product
-
+                product[k][i]=product[k][i]+(array1[k][j]*array2[j][i])
+    product=list2array(product)
+    return product
+    
 def compression(x,y,H,tran_H,):
     for i in range(len(x)):
         for j in range(len(x)):
