@@ -50,13 +50,22 @@ def transform_matrix():
 
 def matrix_product(array1, array2):
     product=init_matrix(8,8)
-    product=list2array(product)
-    for k in range(0,8):
+    if(len(str(array2))==0):
         for i in range(0,8):
-            product[k][i]=0
             for j in range(0,8):
-                product[k][i]=product[k][i]+(list1[k][j]*list2[j][i])
-    return product
+                product[i][j]=array1[i][j]*array2
+        product=list2array(product)
+        return product
+    else:
+        array1=list2array(array1)
+        array2=list2array(array2)
+        for k in range(0,8):
+            for i in range(0,8):
+                product[k][i]=0
+                for j in range(0,8):
+                    product[k][i]=product[k][i]+(array1[k][j]*array2[j][i])
+        product=list2array(product)
+        return product
 
 def compression(x,y,H,tran_H,):
     for i in range(len(x)):
@@ -66,6 +75,13 @@ def compression(x,y,H,tran_H,):
 
     return y
 
+def transpose(list_name):
+    b=init_matrix(8,8)
+    for i in range(0,8):
+        for j in range(0,8):
+                b[j][i]=list_name[i][j]
+    b=list2array(b)
+    return b
 
 array,maxo,dimension,orig_height,orig_width=resize('abc.jpg')
 maxo=int(maxo)
@@ -94,15 +110,17 @@ compressed_red=init_matrix(maxo,maxo)
 compressed_green=init_matrix(maxo,maxo)
 compressed_blue=init_matrix(maxo,maxo)
 
+H_transpose=transpose(H)
 for i in range(len(red_blocks)):
     for j in range(0,len(red_blocks)):
-        compressed_red[i][j]=np.dot(np.dot(H.T,red_blocks[i][j]),H)
+        compressed_red[i][j]=matrix_product(matrix_product(H_transpose,red_blocks[i][j]),H)
 for i in range(len(green_blocks)):
     for j in range(0, len(green_blocks)):
-        compressed_green[i][j] = np.dot(np.dot(H.T, green_blocks[i][j]), H)
+        compressed_green[i][j]=matrix_product(matrix_product(H_transpose,green_blocks[i][j]),H)
 for i in range(len(blue_blocks)):
     for j in range(0, len(blue_blocks)):
-        compressed_blue[i][j] = np.dot(np.dot(H.T, blue_blocks[i][j]), H)
+        compressed_blue[i][j]=matrix_product(matrix_product(H_transpose,blue_blocks[i][j]),H)
+
 
 compressed_red=list2array(compressed_red)
 compressed_green=list2array(compressed_green)
@@ -141,13 +159,13 @@ decompressed_blue=init_matrix(maxo,maxo)
 
 for i in range(len(red_blocks)):
     for j in range(len(red_blocks)):
-        decompressed_red[i][j] = np.dot(np.dot(H,compressed_red[i][j]),H.T)
+        decompressed_red[i][j]=matrix_product(matrix_product(H,compressed_red[i][j]),H_transpose)
 for i in range(len(green_blocks)):
     for j in range(len(green_blocks)):
-        decompressed_green[i][j] = np.dot(np.dot(H,compressed_green[i][j]),H.T)
+        decompressed_green[i][j]=matrix_product(matrix_product(H,compressed_green[i][j]),H_transpose)
 for i in range(len(blue_blocks)):
     for j in range(len(blue_blocks)):
-        decompressed_blue[i][j] = np.dot(np.dot(H,compressed_blue[i][j]),H.T)
+        decompressed_blue[i][j]=matrix_product(matrix_product(H,compressed_blue[i][j]),H_transpose)
 
 decompressed_red=list2array(decompressed_red)
 decompressed_green=list2array(decompressed_green)
