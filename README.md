@@ -2,7 +2,9 @@
 
 <h2>Introduction</h2>
 <p> This repository implements lossless image compression using Haar Transform which is categorized under Discrete Wavelet Transforms. It breaks the signal into two components namely, average and difference. The average operation produces the <i>approximation coefficients</i> and the difference operation produces <i>detail coefficients</i>.
-</p>
+<p> The program takes a RGB image as an input and produces a compressed image which looks visually the same.</p>
+
+<h2>Working</h2>
 
 <p> The core principle can be understood using an example :</p>
 <p> Let's imagine we have an array </p> <br>
