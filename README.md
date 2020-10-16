@@ -20,5 +20,10 @@
 <p align="center"> <img src="https://render.githubusercontent.com/render/math?math=A = [4.5, -2.0, -1.0, -1.0, -0.5, -0.5, -0.5, -0.5, -0.5]"></p>
 
 <p> We observe that our latest array has reduced greatly with almost all elements close to 0 except the first one. We can reverse this process to obtain the original array.</p>
-<p> We originally had an array with 8 elements. We carried out the operations 3 times. The number of times can be found using 
+<p> We originally had an array with 8 elements. We carried out the operations 3 times. So, how did we arrive at this number? Is it just hit and trial? No, we can find out the number of the iterations by using the formula:</p>
 <p align="center"> <img src="https://render.githubusercontent.com/render/math?math=n= log(array length)/log(2)"></p>
+
+<p> An image can be assumed to be a matrix of finite such arrays. To compress an image, we carry out these operations for all rows and columns to produce a greatly reduced matrix. We could further achieve more compression by choosing a limit and setting all elements in the array whose absolute value is lower than that limit. In the above example, we could set the limit as 0.5. The newly reduced array would be :</p>
+<p align="center"> <img src="https://render.githubusercontent.com/render/math?math=A = [4.5, -2.0, -1.0, -1.0, 0, 0, 0, 0, 0]"></p>
+
+<p> There are two approcahes to arrive at the same result. We could either iterate through each element of the image and carry out the averaging and subtraction operations. The alternative is to use linear algebra to make the process faster. We could just multiply the image matrix with the Haar transform matrix to get the reduced matrix. This repository utilizes the second way. 
