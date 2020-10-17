@@ -1,6 +1,7 @@
 import numpy as np
 from PIL import Image
 import skimage
+import os
 
 def resize(file_name):
     image=Image.open(file_name)
@@ -76,7 +77,13 @@ def transpose(list_name):
     b=list2array(b)
     return b
 
-array,maxo,dimension,orig_height,orig_width=resize('abc.jpg')
+def return_size(filename):
+    size=os.path.getsize(filename)
+    return size
+
+filename='abc.jpg'
+original_size=return_size(filename)
+array,maxo,dimension,orig_height,orig_width=resize(filename)
 maxo=int(maxo)
 
 x=array.shape[0]
@@ -187,3 +194,9 @@ decompressed=decompressed.astype(np.uint8)
 
 decompressed_img=Image.fromarray(decompressed)
 decompressed_img=decompressed_img.resize([orig_height,orig_width])
+decompressed_img.save('decompressed.jpg')
+
+compressed_size=return_size('decompressed.jpg')
+
+print("ORIGINAL SIZE (KB) : ",float(original_size/1024))
+print("COMPRESSED SIZE (KB) : ",float(compressed_size/1024))
