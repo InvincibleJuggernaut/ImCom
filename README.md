@@ -4,9 +4,14 @@
 <p> This repository implements lossless image compression using Haar Transform which is categorized under Discrete Wavelet Transforms. It breaks the signal into two components namely, average and difference. The average operation produces the <i>approximation coefficients</i> and the difference operation produces <i>detail coefficients</i>.
 <p> The program takes a RGB image as an input and produces a compressed image which looks visually the same.</p>
 
-<p align="center"><img src="Assets/abc.jpg"></p>
 
-<p> The above image's original size is 2.7 MB. After compression, the image size was reduced to 418.7 KB !</p>
+<p align="center">
+  <img src="/Assets/abc.jpg">&emsp; &emsp; &emsp;
+  <img src="/Assets/decompressed.jpg">
+  </p>
+
+<p> The first image's original size is 2.7 MB. After compression, the second image was obtained whose size was reduced to 418.7 KB !</p>
+
 
 <h2>Working</h2>
 
