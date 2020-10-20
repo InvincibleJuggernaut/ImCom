@@ -60,14 +60,6 @@ def matrix_product(array1, array2):
                 product[k][i]=product[k][i]+(array1[k][j]*array2[j][i])
     product=list2array(product)
     return product
-    
-def compression(x,y,H,tran_H,):
-    for i in range(len(x)):
-        for j in range(len(x)):
-            m=matrix_product(tran_H,x[i][j])
-            y[i][j]=matrix_product(m,H)
-
-    return y
 
 def transpose(list_name):
     b=init_matrix(8,8)
@@ -121,7 +113,6 @@ for i in range(len(blue_blocks)):
     for j in range(0, len(blue_blocks)):
         compressed_blue[i][j]=matrix_product(matrix_product(H_transpose,blue_blocks[i][j]),H)
 
-
 compressed_red=list2array(compressed_red)
 compressed_green=list2array(compressed_green)
 compressed_blue=list2array(compressed_blue)
@@ -137,7 +128,6 @@ for i in range(0,x):
         compressed[i].append([])
         for k in range(0,3):
             compressed[i][j].append([])
-
 
 for i in range(0,x):
     for j in range(0,y):
@@ -190,13 +180,14 @@ for i in range(0,x):
         decompressed[i][j][2]=blue_components[i][j]
 
 decompressed=list2array(decompressed)
-decompressed=decompressed.astype(np.uint8)
+decompressed_image_array=decompressed.astype(np.uint8)
 
-decompressed_img=Image.fromarray(decompressed)
+decompressed_img=Image.fromarray(decompressed_image_array)
 decompressed_img=decompressed_img.resize([orig_height,orig_width])
 decompressed_img.save('decompressed.jpg')
-
 compressed_size=return_size('decompressed.jpg')
 
 print("ORIGINAL SIZE (KB) : ",float(original_size/1024))
 print("COMPRESSED SIZE (KB) : ",float(compressed_size/1024))
+ratio=float(original_size/1024)/float(compressed_size/1024)
+print("COMPRESSION PERCENTAGE : ",100-(100/ratio))
