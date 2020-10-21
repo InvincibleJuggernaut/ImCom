@@ -17,7 +17,7 @@
 
 <p> The core principle can be understood using an example :</p>
 <p> Let's imagine we have an array </p> <br>
-<p align="center"> <img src="https://render.githubusercontent.com/render/math?math=A = [1, 2, 3, 4, 5, 6, 7, 8]"></p>
+<p align="center"><img src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%0A1%20%26%202%20%26%203%20%26%204%20%26%205%20%26%206%20%26%207%20%26%208%20%0A%5Cend%7Bbmatrix%7D"></p>
 <p> First, we group adjacent elements to form pairs.</p>
 <p align="center"> <img src="https://render.githubusercontent.com/render/math?math=|1, 2|, |3, 4|, |5, 6|, |7, 8|"></p>
 <p> Now, average each pair and produce a new array with the first four entries as the averages. Calculate half the difference of the pairs and these four results would occupy the last four slots in the new array.</p>
