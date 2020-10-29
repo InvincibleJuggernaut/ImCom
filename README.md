@@ -53,5 +53,9 @@ Run the code and write the LATEX equation you need to generate the link to be wr
 
 <p> A RGB image can be represented as a 3-D matrix. To compress a RGB image, we first need to separate the three colour components, namely R, G & B and store them in separate matrices. The three new matrices obtained are 2-D. Then, we compress them individually, decompress them and combine the three matrices again to form a 3-D matrix. This matrix represents the compressed image after Haar Transform.  </p>
 
+<h2> Dependencies</h2>
+
+<p> The dependencies can be found <a href="requirements.txt">here</a></p>
+  
 <h2> Comments</h2>
-<p> Note that the program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matrices mutliplication has been calculated using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise the program is quite slow. Though, it could be drastically sped up using the in-built functions.</p>
+<p> Note that the program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matricex mutliplication has been achieved using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise that the program is quite slow. Though, it could be drastically sped up using the in-built functions.</p>
