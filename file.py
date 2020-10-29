@@ -4,15 +4,15 @@ import skimage
 import os
 
 def resize(file_name):
-    image=Image.open(file_name)
+    orig_image=Image.open(file_name)
     dimension=512
-    height=image.size[0]
-    width=image.size[1]
-    image=image.resize([dimension,dimension])
+    height=orig_image.size[0]
+    width=orig_image.size[1]
+    image=orig_image.resize([dimension,dimension])
     no_of_blocks=(dimension*dimension)/(8*8)
     max_limit=(no_of_blocks)**(1/2)
     array=np.asarray(image)
-    return array,max_limit,dimension,height,width
+    return array, max_limit, dimension, height, width, orig_image
 
 def init_matrix(x,y):
     list_name=[]
@@ -75,7 +75,7 @@ def return_size(filename):
 
 filename='abc.jpg'
 original_size=return_size(filename)
-array,maxo,dimension,orig_height,orig_width=resize(filename)
+array,maxo,dimension,orig_height,orig_width,orig_image=resize(filename)
 maxo=int(maxo)
 
 x=array.shape[0]
