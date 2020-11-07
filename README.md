@@ -58,4 +58,4 @@ Run the code and write the LATEX equation you need to generate the link to be wr
 <p> All the dependencies can be found <a href="requirements.txt">here</a>.</p>
   
 <h2> Comments</h2>
-<p> Note that the program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matrice mutliplication has been achieved using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise that the program is quite slow. It could be drastically sped up using the in-built functions.</p>
+<p> Note that the program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matrix mutliplication has been achieved using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise that the program is quite slow. It could be drastically sped up using the in-built functions.</p>
