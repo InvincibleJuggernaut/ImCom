@@ -67,6 +67,29 @@ Run the code and write the LATEX equation you need to generate the link to be wr
 <h2> Dependencies</h2>
 
 <p> All the dependencies can be found <a href="requirements.txt">here</a>.</p>
+ 
+<h2> Usage </h2>
+
+<ul type="disc">
+  <li>Clone this repository using :
   
+  ```
+  https://github.com/InvincibleJuggernaut/ImCom.git
+  ```
+  </li>
+  <li> Next, go inside the repository directory using :
+ 
+  ```
+  cd ImCom
+  ```
+  </li>
+  <li> The program takes the image named as ```abc.jpg``` as input stored in this directory. Therefore, either place an image     renamed as such inside this same directory or change the name of the image in file.py accordingly. Once this is done, the program can be run using :
+
+  ```
+  python3 file.py 
+  ```
+  </li>
+</ul>
+ 
 <h2> Comments</h2>
 <p> Note that the program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matrix mutliplication has been achieved using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise that the program is quite slow. It could be drastically sped up using the in-built functions.</p>
