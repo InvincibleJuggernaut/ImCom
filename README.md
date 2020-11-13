@@ -83,6 +83,14 @@ Run the code and write the LATEX equation you need to generate the link to be wr
   cd ImCom
   ```
   </li>
+  
+  <li> Install all the dependencies using:
+
+```
+pip3 install -r requirements.txt
+```
+</li>
+
   <li> The program takes the image named as <i>abc.jpg</i> as input stored in this directory. Therefore, either place an image     renamed as such inside this same directory or change the name of the image in <i>file.py</i> accordingly. Once this is done, the program can be run using :
 
   ```
