@@ -62,7 +62,7 @@
 Run the code and write the LATEX equation you need to generate the link to be written in README.
 -->
 
-<p> A RGB image can be represented as a 3-D matrix. To compress a RGB image, we first need to separate the three colour components, namely R, G & B and store them in separate matrices. The three new matrices obtained are 2-D. Then, we compress them individually, decompress them and combine the three matrices again to form a 3-D matrix. This matrix represents the compressed image after Haar Transform.  </p>
+<p> A RGB image can be represented as a 3-D matrix. To compress a RGB image, we first need to separate the three colour components, namely red, green and blue and store them in separate matrices. The three new matrices obtained are 2-D. Then, we compress them individually, decompress them and combine the three matrices again to form a 3-D matrix. This matrix represents the compressed image after Haar Transform.  </p>
 
 <h2> Dependencies</h2>
 
