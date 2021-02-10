@@ -104,4 +104,4 @@ pip3 install -r requirements.txt
 
 <h2>License</h2>
 
-<p><a href="LICENSE.txt">MIT License</a></p>
+<p><a href="LICENSE">MIT License</a></p>
