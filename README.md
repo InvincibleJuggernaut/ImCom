@@ -100,7 +100,7 @@ pip3 install -r requirements.txt
 </ul>
  
 <h2>Comments</h2>
-<p> Note that the program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matrix mutliplication has been achieved using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise that the program is quite slow. It could be drastically sped up using the in-built functions.</p>
+<p> Note that the python program is using some user-defined functions wherever possible instead of in-built functions from the libraries. For example, matrix mutliplication has been achieved using raw Python code instead of using the much optimized <i>numpy.dot</i>. Therefore, it shouldn't be a surprise that the program is quite slow. It could be drastically sped up using the in-built functions.</p>
 
 <h2>License</h2>
 
